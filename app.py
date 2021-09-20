@@ -15,3 +15,4 @@ if ok:
     z["class"]=model.predict(df)
     z.to_csv( name1 + '\\output_'  + '.csv' , index=False )
     st.subheader("the Process Complete. Please check Output Directory")
+

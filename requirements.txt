@@ -129,7 +129,7 @@ validators==0.18.2
 voluptuous==0.12.1
 watchdog==2.1.5
 wcwidth==0.2.5
-webencodings==0.1
+webencodings==0.5.1
 Werkzeug==2.0.1
 widgetsnbextension==3.5.1
 win-unicode-console==0.5

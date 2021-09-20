@@ -65,7 +65,7 @@ class Data_extraction:
             auth_provider = PlainTextAuthProvider('dk6304273089@gmail.com', 'Dheerajkumar@123')
             cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider,idle_heartbeat_interval=20)
             session = cluster.connect()
-            query = "SELECT * FROM h3.aps3";
+            query = "SELECT * FROM aps2.aps3";
             log(self.file,"Data 3 extraction started")
             df3 = pd.DataFrame(list(session.execute(query)))
             df3=df3.sort_values(by=['ind'])
