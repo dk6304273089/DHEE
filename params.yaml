@@ -1,0 +1,13 @@
+base:
+  project: APS-project
+
+data_source:
+  h1_data: databases/secure-connect-h1.zip
+  h2_data: databases/secure-connect-h22.zip
+  h3_data: databases/secure-connect-h33.zip
+
+load_data:
+  data: data/raw/aps.csv
+
+process_data:
+  data: data/processed/aps.csv

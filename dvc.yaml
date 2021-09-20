@@ -1,0 +1,17 @@
+stages:
+  extract_data:
+    cmd: python src/get_data.py --config=params.yaml
+    deps:
+    - src/get_data.py
+    - databases/secure-connect-h1.zip
+    - databases/secure-connect-h22.zip
+    - databases/secure-connect-h33.zip
+    outs:
+    - data/raw/aps.csv
+  processing_data:
+    cmd: python src/load_data.py --config=params.yaml
+    deps:
+    - data/raw/aps.csv
+    outs:
+    - data/processed/aps.csv
+  
