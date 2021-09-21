@@ -131,6 +131,6 @@ Werkzeug==2.0.1
 widgetsnbextension==3.5.1
 win-unicode-console==0.5
 wincertstore==0.2
-xgboost==1.4.2
-xmltodict==0.12.0
-zc.lockfile==2.0
+#xgboost==1.4.2
+#xmltodict==0.12.0
+#zc.lockfile==2.0
