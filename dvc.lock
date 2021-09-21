@@ -1,0 +1,51 @@
+schema: '2.0'
+stages:
+  extract_data:
+    cmd: python src/get_data.py --config=params.yaml
+    deps:
+    - path: databases/secure-connect-12.zip
+      md5: 165aca1e3c5b224a7c72429d5f282788
+      size: 12317
+    - path: databases/secure-connect-ap1.zip
+      md5: c4e651ea9c9b4c6d25f7bb03781e2420
+      size: 12357
+    - path: databases/secure-connect-h11.zip
+      md5: c7dcbdfc0afe5c4bb44c3508923094ed
+      size: 12303
+    - path: src/get_data.py
+      md5: 0a8f7d842e053846d0adfa308e4e1d90
+      size: 3584
+    outs:
+    - path: data/raw/aps.csv
+      md5: facae1a70d9c70bc6d386d7552890bfd
+      size: 46717246
+  processing_data:
+    cmd: python src/load_data.py --config=params.yaml
+    deps:
+    - path: data/raw/aps.csv
+      md5: facae1a70d9c70bc6d386d7552890bfd
+      size: 46717246
+    outs:
+    - path: data/processed/aps.csv
+      md5: daa9ae1fe9f50c56b22d4b2e4447d64c
+      size: 24967387
+  finalling_data:
+    cmd: python src/f_s.py --config=params.yaml
+    deps:
+    - path: data/processed/aps.csv
+      md5: daa9ae1fe9f50c56b22d4b2e4447d64c
+      size: 24967387
+    outs:
+    - path: data/final/aps.csv
+      md5: c9b498604f12753083fa6dccc193df25
+      size: 24430310
+  training_and_evaluating:
+    cmd: python src/train_and_evalute.py
+    deps:
+    - path: data/final/aps.csv
+      md5: c9b498604f12753083fa6dccc193df25
+      size: 24430310
+    outs:
+    - path: saved_models/model.joblib
+      md5: a6763b2e62540746028ba1c3a3e420dc
+      size: 1184640

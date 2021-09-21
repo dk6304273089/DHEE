@@ -39,7 +39,7 @@ class Data_extraction:
             auth_provider = PlainTextAuthProvider('dk6304273089@gmail.com', 'Dheerajkumar@123')
             cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider,idle_heartbeat_interval=10)
             session = cluster.connect()
-            query = "SELECT * FROM h1.aps1";
+            query = "SELECT * FROM aps1.aps1";
             log(self.file,"Data 1 extraction started")
             df1 = pd.DataFrame(list(session.execute(query)))
             df1.rename({"field_57_":"class"},axis=1,inplace=True)
@@ -52,7 +52,7 @@ class Data_extraction:
             auth_provider = PlainTextAuthProvider('dk6304273089@gmail.com', 'Dheerajkumar@123')
             cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider,idle_heartbeat_interval=15)
             session = cluster.connect()
-            query = "SELECT * FROM h2.aps2";
+            query = "SELECT * FROM h22.aps2";
             log(self.file,"Data 2 extraction started")
             df2 = pd.DataFrame(list(session.execute(query)))
             df2=df2.sort_values(by=['ind'])

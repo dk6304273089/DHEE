@@ -2,8 +2,8 @@ base:
   project: APS-project
 
 data_source:
-  h1_data: databases/secure-connect-h1.zip
-  h2_data: databases/secure-connect-h222.zip
+  h1_data: databases/secure-connect-h11.zip
+  h2_data: databases/secure-connect-12.zip
   h3_data: databases/secure-connect-ap1.zip
 
 load_data:
@@ -13,3 +13,32 @@ process_data:
   data: data/processed/aps.csv
 final_data:
   data: data/final/aps.csv
+model_dir: saved_models
+reports:
+  params: report/params.json
+  scores: report/scores.json
+estimators:
+  xgboost:
+    params:
+      base_score: 0.5
+      booster: 'gbtree'
+      colsample_bylevel: 1
+      colsample_bynode: 1
+      colsample_bytree: 0.5
+      gamma: 0.1
+      gpu_id: -1
+      importance_type: 'gain'
+      learning_rate: 0.15
+      max_delta_step: 0
+      max_depth: 10
+      min_child_weight: 3
+      n_estimators: 100
+      n_jobs: 8
+      num_parallel_tree: 1
+      random_state: 10
+      reg_alpha: 0
+      reg_lambda: 1
+      scale_pos_weight: 1
+      subsample: 1
+      tree_method: exact
+      validate_parameters: 1

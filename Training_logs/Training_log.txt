@@ -1,0 +1,15 @@
+
+2021-09-21/10:58:48		Data 1 extraction started
+2021-09-21/11:01:50		Data 1 extraction completed
+2021-09-21/11:02:05		Data 2 extraction started
+2021-09-21/11:05:35		Data 2 extraction completed
+2021-09-21/11:05:50		Data 3 extraction started
+2021-09-21/11:10:54		Data 3 extraction completed
+2021-09-21/11:11:04		successfully removed unwanted columns
+2021-09-21/11:11:07		successfully saved the processed file
+2021-09-21/11:11:47		successfully replaced None values with missing values
+2021-09-21/11:11:51		handled columns missing value with more than 15%
+2021-09-21/11:11:54		handled missing values with less than 15%
+2021-09-21/11:11:56		finally data is ready for model training
+2021-09-21/12:27:11		successfully applied smote
+2021-09-21/12:29:19		successfully applied smote
