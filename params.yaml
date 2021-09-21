@@ -3,7 +3,7 @@ base:
 
 data_source:
   h1_data: databases/secure-connect-h1.zip
-  h2_data: databases/secure-connect-h22.zip
+  h2_data: databases/secure-connect-h222.zip
   h3_data: databases/secure-connect-ap1.zip
 
 load_data:

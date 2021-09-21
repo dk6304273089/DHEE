@@ -4,7 +4,7 @@ stages:
     deps:
     - src/get_data.py
     - databases/secure-connect-h1.zip
-    - databases/secure-connect-h22.zip
+    - databases/secure-connect-h222.zip
     - databases/secure-connect-ap1.zip
     outs:
     - data/raw/aps.csv

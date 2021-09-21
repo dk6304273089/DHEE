@@ -63,7 +63,7 @@ class Data_extraction:
             cloud_config= {
             'secure_connect_bundle': "{}".format(data3)}
             auth_provider = PlainTextAuthProvider('dk6304273089@gmail.com', 'Dheerajkumar@123')
-            cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider,idle_heartbeat_interval=20)
+            cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider,idle_heartbeat_interval=25)
             session = cluster.connect()
             query = "SELECT * FROM aps2.aps3";
             log(self.file,"Data 3 extraction started")
