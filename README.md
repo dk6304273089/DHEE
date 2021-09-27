@@ -1,11 +1,11 @@
 create env
-'''bash
+```bash
 conda create -n env name python=3.7 
-'''
+```
 
-'''bash
+```bash
 activate env
-'''
+```
 
 ```bash
 conda activate wineq
