@@ -18,5 +18,5 @@ if ok:
     end = time.time()
     timestr = time.strftime("%Y%m%d-%H%M%S")
     z.to_csv( name1 + '\\output_'  + '.csv' , index=False )
-    st.subheader("PROCESS COMPLETED. PLEASE CHECK OUTPUT DIRECTORY. TOTAL TIME TAKEN: {}".format(end-start))
+    st.subheader("PROCESS COMPLETED. PLEASE CHECK OUTPUT DIRECTORY. TOTAL TIME TAKEN: {} SECONDS".format(int(end-start)))
 

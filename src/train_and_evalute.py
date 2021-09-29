@@ -20,8 +20,10 @@ class train:
             config = read_params(config_path)
             data_path=config["final_data"]["data"]
             model_dir = config["model_dir"]
+            scores_file = config["reports"]["scores"]
+            params_file = config["reports"]["params"]
             df = pd.read_csv(data_path, sep=",")
-            return df,model_dir
+            return df,model_dir,scores_file,params_file
         except Exception as e:
             print(e)
         
@@ -29,7 +31,7 @@ class train:
     def train(self,config_path):
         try:
             config = read_params(config_path)
-            df,model_dir=self.data_read()
+            df,model_dir,scores_file,params_file=self.data_read()
             x=df.drop("class",axis=1)
             y=df["class"]
             sc=StandardScaler()
@@ -72,10 +74,6 @@ class train:
             log(self.file,"training started")
             xg.fit(X_train_smote,y_train_smote)
             predicted_qualities = np.where(xg.predict_proba(X_test)[:,1]>0.6,1,0)    
-
-
-            scores_file = config["reports"]["scores"]
-            params_file = config["reports"]["params"]
 
             with open(scores_file, "w") as f:
                 scores = {

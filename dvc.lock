@@ -1,7 +1,7 @@
 schema: '2.0'
 stages:
   extract_data:
-    cmd: python src/get_data.py --config=params.yaml
+    cmd: python src/get_data.py --config=config.yaml
     deps:
     - path: databases/secure-connect-12.zip
       md5: 165aca1e3c5b224a7c72429d5f282788
@@ -13,39 +13,51 @@ stages:
       md5: c7dcbdfc0afe5c4bb44c3508923094ed
       size: 12303
     - path: src/get_data.py
-      md5: 0a8f7d842e053846d0adfa308e4e1d90
+      md5: f77325c1a39f9f454333044e72edbaa0
+      size: 3584
+    - path: src/get_data.py
+      md5: f77325c1a39f9f454333044e72edbaa0
       size: 3584
     outs:
     - path: data/raw/aps.csv
       md5: facae1a70d9c70bc6d386d7552890bfd
       size: 46717246
   processing_data:
-    cmd: python src/load_data.py --config=params.yaml
+    cmd: python src/load_data.py --config=config.yaml
     deps:
     - path: data/raw/aps.csv
       md5: facae1a70d9c70bc6d386d7552890bfd
       size: 46717246
+    - path: src/load_data.py
+      md5: 4e41b2146d677fd4d24e97a11e1c595f
+      size: 1762
     outs:
     - path: data/processed/aps.csv
       md5: daa9ae1fe9f50c56b22d4b2e4447d64c
       size: 24967387
   finalling_data:
-    cmd: python src/f_s.py --config=params.yaml
+    cmd: python src/f_s.py --config=config.yaml
     deps:
     - path: data/processed/aps.csv
       md5: daa9ae1fe9f50c56b22d4b2e4447d64c
       size: 24967387
+    - path: src/f_s.py
+      md5: e46c96551b53ab3d079b3f148a97c5b8
+      size: 2220
     outs:
     - path: data/final/aps.csv
       md5: c9b498604f12753083fa6dccc193df25
       size: 24430310
   training_and_evaluating:
-    cmd: python src/train_and_evalute.py
+    cmd: python src/train_and_evalute.py --config=params.yaml
     deps:
     - path: data/final/aps.csv
       md5: c9b498604f12753083fa6dccc193df25
       size: 24430310
+    - path: src/train_and_evalute.py
+      md5: d9aa6cc776ccdb314bf23aad80107101
+      size: 6494
     outs:
     - path: saved_models/model.joblib
-      md5: a6763b2e62540746028ba1c3a3e420dc
-      size: 1184640
+      md5: 597e8f9e6c86f06f7378a69145636107
+      size: 1186253

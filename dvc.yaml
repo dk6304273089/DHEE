@@ -1,6 +1,6 @@
 stages:
   extract_data:
-    cmd: python src/get_data.py --config=params.yaml
+    cmd: python src/get_data.py --config=config.yaml
     deps:
     - src/get_data.py
     - databases/secure-connect-h11.zip
@@ -10,21 +10,21 @@ stages:
     outs:
     - data/raw/aps.csv
   processing_data:
-    cmd: python src/load_data.py --config=params.yaml
+    cmd: python src/load_data.py --config=config.yaml
     deps:
     - data/raw/aps.csv
     - src/load_data.py
     outs:
     - data/processed/aps.csv
   finalling_data:
-    cmd: python src/f_s.py --config=params.yaml
+    cmd: python src/f_s.py --config=config.yaml
     deps:
     - data/processed/aps.csv
     - src/f_s.py
     outs:
     - data/final/aps.csv
   training_and_evaluating:
-    cmd: python src/train_and_evalute.py
+    cmd: python src/train_and_evalute.py --config=params.yaml
     deps:
     - data/final/aps.csv
     - src/train_and_evalute.py
