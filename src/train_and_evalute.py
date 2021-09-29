@@ -15,12 +15,21 @@ import json
 class train:
     def __init__(self):
         self.file=open("Training_logs/Training_log.txt","a+")
-    def train(self,config_path):
+    def data_read(self,config_path="config.yaml"):
         try:
             config = read_params(config_path)
             data_path=config["final_data"]["data"]
             model_dir = config["model_dir"]
             df = pd.read_csv(data_path, sep=",")
+            return df,model_dir
+        except Exception as e:
+            print(e)
+        
+
+    def train(self,config_path):
+        try:
+            config = read_params(config_path)
+            df,model_dir=self.data_read()
             x=df.drop("class",axis=1)
             y=df["class"]
             sc=StandardScaler()
@@ -60,6 +69,7 @@ class train:
             smote = SMOTE()
             X_train_smote, y_train_smote = smote.fit_resample(X_train,y_train)
             log(self.file,"successfully applied smote")
+            log(self.file,"training started")
             xg.fit(X_train_smote,y_train_smote)
             predicted_qualities = np.where(xg.predict_proba(X_test)[:,1]>0.6,1,0)    
 
@@ -103,6 +113,7 @@ class train:
                 json.dump(params, f, indent=4)
             os.makedirs(model_dir, exist_ok=True)
             model_path = os.path.join(model_dir, "model.joblib")
+            log(self.file,"model dumped successfully")
             joblib.dump(xg, model_path)
         except Exception as e:
             print(e)

@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: src
+Version: 0.0.1
+Summary: A package for dvc ml pipeline
+Home-page: https://github.com/dk6304273089/DHEE
+Author: DHEERAJ
+Author-email: dk6304273089@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+create  a environment
+```bash
+conda create -n env name python=3.7 
+```
+activate environment
+```bash
+conda activate env
+```
+install requirements file
+```bash 
+pip install -r requirements.txt
+```
+
+```bash
+git init
+```
+
+```bash
+dvc init
+```
+
+```bash
+git add .
+```
+
+```bash
+git commit -m "commit"
+```
+
+```bash
+git remote add origin https://github.com/dk6304273089/DHEE.git
+git branch -M main
+git push origin main
+```
+retraining approach
+```bash
+dvc repro
+```
+ 
+

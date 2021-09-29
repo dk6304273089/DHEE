@@ -6,23 +6,27 @@ stages:
     - databases/secure-connect-h11.zip
     - databases/secure-connect-12.zip
     - databases/secure-connect-ap1.zip
+    - src/get_data.py
     outs:
     - data/raw/aps.csv
   processing_data:
     cmd: python src/load_data.py --config=params.yaml
     deps:
     - data/raw/aps.csv
+    - src/load_data.py
     outs:
     - data/processed/aps.csv
   finalling_data:
     cmd: python src/f_s.py --config=params.yaml
     deps:
     - data/processed/aps.csv
+    - src/f_s.py
     outs:
     - data/final/aps.csv
   training_and_evaluating:
     cmd: python src/train_and_evalute.py
     deps:
     - data/final/aps.csv
+    - src/train_and_evalute.py
     outs:
     - saved_models/model.joblib
