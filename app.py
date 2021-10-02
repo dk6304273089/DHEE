@@ -9,7 +9,7 @@ ok = st.button("SUBMIT")
 if ok:
     df=read_data(r"{}".format(name))
     
-    if  df.shape[1]==171:
+    if df.shape[1]==171:
         start = time.time()
         z=df
         df=drop_data(df)
@@ -17,11 +17,9 @@ if ok:
         z["class"]=model.predict(df)
         end = time.time()
         timestr = time.strftime("%Y%m%d-%H%M%S")
-        z.to_csv( name1 + '\\output_'+ str(timestr) +  + '.csv' , index=False )
+        z.to_csv(name1+'\\output_'+ str(timestr) + '.csv' , index=False )
         st.subheader("PROCESS COMPLETED. PLEASE CHECK OUTPUT DIRECTORY. TOTAL TIME TAKEN: {} SECONDS".format(int(end-start)))
     else:
         st.error('Number of columns are incorrect')
-else:
-    st.error('Something went wrong')
 
 

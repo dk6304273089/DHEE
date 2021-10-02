@@ -36,3 +36,63 @@
 2021-09-29/14:15:03		transformation done
 2021-09-29/14:15:04		Done iterative imputer
 2021-09-29/14:15:06		successfully completed
+2021-10-02/18:37:32		Dropped 1st columns
+2021-10-02/18:37:32		Dropped 2nd columns
+2021-10-02/18:37:33		Dropped 3rd columns
+2021-10-02/18:37:33		Dropped 4th columns
+2021-10-02/18:37:33		Dropped 5th columns
+2021-10-02/18:37:33		Dropped all columns
+2021-10-02/18:37:33		Done replaced nan
+2021-10-02/18:37:33		transformation done
+2021-10-02/18:37:36		Done iterative imputer
+2021-10-02/18:37:37		successfully completed
+2021-10-02/18:39:45		Dropped 1st columns
+2021-10-02/18:39:45		Dropped 2nd columns
+2021-10-02/18:39:45		Dropped 3rd columns
+2021-10-02/18:39:45		Dropped 4th columns
+2021-10-02/18:39:45		Dropped 5th columns
+2021-10-02/18:39:45		Dropped all columns
+2021-10-02/18:39:45		Done replaced nan
+2021-10-02/18:39:45		transformation done
+2021-10-02/18:39:47		Done iterative imputer
+2021-10-02/18:39:48		successfully completed
+2021-10-02/18:42:01		Dropped 1st columns
+2021-10-02/18:42:01		Dropped 2nd columns
+2021-10-02/18:42:01		Dropped 3rd columns
+2021-10-02/18:42:01		Dropped 4th columns
+2021-10-02/18:42:01		Dropped 5th columns
+2021-10-02/18:42:01		Dropped all columns
+2021-10-02/18:42:02		Done replaced nan
+2021-10-02/18:42:02		transformation done
+2021-10-02/18:42:04		Done iterative imputer
+2021-10-02/18:42:05		successfully completed
+2021-10-02/18:43:48		Dropped 1st columns
+2021-10-02/18:43:48		Dropped 2nd columns
+2021-10-02/18:43:48		Dropped 3rd columns
+2021-10-02/18:43:48		Dropped 4th columns
+2021-10-02/18:43:49		Dropped 5th columns
+2021-10-02/18:43:49		Dropped all columns
+2021-10-02/18:43:49		Done replaced nan
+2021-10-02/18:43:49		transformation done
+2021-10-02/18:43:51		Done iterative imputer
+2021-10-02/18:43:52		successfully completed
+2021-10-02/18:47:37		Dropped 1st columns
+2021-10-02/18:47:37		Dropped 2nd columns
+2021-10-02/18:47:38		Dropped 3rd columns
+2021-10-02/18:47:38		Dropped 4th columns
+2021-10-02/18:47:38		Dropped 5th columns
+2021-10-02/18:47:38		Dropped all columns
+2021-10-02/18:47:38		Done replaced nan
+2021-10-02/18:47:38		transformation done
+2021-10-02/18:47:40		Done iterative imputer
+2021-10-02/18:47:41		successfully completed
+2021-10-02/18:50:05		Dropped 1st columns
+2021-10-02/18:50:05		Dropped 2nd columns
+2021-10-02/18:50:05		Dropped 3rd columns
+2021-10-02/18:50:05		Dropped 4th columns
+2021-10-02/18:50:05		Dropped 5th columns
+2021-10-02/18:50:05		Dropped all columns
+2021-10-02/18:50:06		Done replaced nan
+2021-10-02/18:50:06		transformation done
+2021-10-02/18:50:08		Done iterative imputer
+2021-10-02/18:50:10		successfully completed
