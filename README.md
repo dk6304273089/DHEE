@@ -36,4 +36,8 @@ retraining approach
 ```bash
 dvc repro
 ```
+To host our prediction page on browser
+```bash
+streamlit run app.py
+```
  
