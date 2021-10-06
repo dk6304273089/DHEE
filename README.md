@@ -36,8 +36,7 @@ retraining approach
 ```bash
 dvc repro
 ```
-To host our prediction page on browser
+To access our prediction page on browser
 ```bash
-streamlit run app.py
+https://docker-dem.herokuapp.com/
 ```
- 
