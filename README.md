@@ -40,3 +40,7 @@ To access our prediction page on browser
 ```bash
 https://docker-dem.herokuapp.com/
 ```
+prediction page
+```bash 
+![Screenshot (63)](https://user-images.githubusercontent.com/65006527/136249936-8e0f1a4a-92a1-46a6-b809-c5fb9ad2cc35.png)
+```
