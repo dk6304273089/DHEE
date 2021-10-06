@@ -20,6 +20,5 @@ if ok:
         st.subheader("The Failure is not related to air pressure system")
     else:
         st.subheader("The Failure is related to air pressure system")
-#
    
 
