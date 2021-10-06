@@ -1,25 +1,25 @@
 import streamlit as st
-from prediction.data import read_data,drop_data
 import joblib
 import time
+import numpy as np
 st.title("SCANIA APS FAILURE")
-name = st.text_input("ENTER THE INPUT PATH FILE")
-name1=st.text_input("ENTER THE OUTPUT FOLDER PATH FOLDER")
+aa_000 = int(st.sidebar.number_input("Enter the value of aa_000",min_value=0,max_value=2746564))
+ag_002=int(st.sidebar.number_input("Enter the value of ag_002",min_value=0,max_value=10552856))
+cs_004=int(st.sidebar.number_input("Enter the value of cs_004",min_value=0,max_value=74860628))
+ay_008=int(st.sidebar.number_input("Enter the value of ay_008",min_value=0,max_value=104566992))
+dn_000=int(st.sidebar.number_input("Enter the value of dn_000",min_value=0,max_value=2924584))
+cj_000=int(st.sidebar.number_input("Enter the value of cj_000",min_value=0,max_value=60949671))
 ok = st.button("SUBMIT")
 if ok:
-    df=read_data(r"{}".format(name))
-    
-    if df.shape[1]==171:
-        start = time.time()
-        z=df
-        df=drop_data(df)
-        model=joblib.load("saved_models/model.joblib")
-        z["class"]=model.predict(df)
-        end = time.time()
-        timestr = time.strftime("%Y%m%d-%H%M%S")
-        z.to_csv(name1+'\\output_'+ str(timestr) + '.csv' , index=False )
-        st.subheader("PROCESS COMPLETED. PLEASE CHECK OUTPUT DIRECTORY. TOTAL TIME TAKEN: {} SECONDS".format(int(end-start)))
+    values=[[aa_000,ag_002,cs_004,ay_008,dn_000,cj_000]]
+    model=joblib.load("saved_models/model.joblib")
+    model1=joblib.load("saved_models/sc.joblib")
+    transform=model1.transform(values)
+    c=np.where(model.predict_proba(transform)[:,1]>0.9,1,0)
+    if c==[0]:
+        st.subheader("The Failure is not related to air pressure system")
     else:
-        st.error('Number of columns are incorrect')
+        st.subheader("The Failure is related to air pressure system")
 
+   
 

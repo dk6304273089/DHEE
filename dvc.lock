@@ -29,35 +29,35 @@ stages:
       md5: facae1a70d9c70bc6d386d7552890bfd
       size: 46717246
     - path: src/load_data.py
-      md5: 4e41b2146d677fd4d24e97a11e1c595f
-      size: 1762
+      md5: d61f24d3a5c129090dffb3dd7ac75ac4
+      size: 980
     outs:
     - path: data/processed/aps.csv
-      md5: daa9ae1fe9f50c56b22d4b2e4447d64c
-      size: 24967387
+      md5: 491b506f367e9c77a2438c214cf02c69
+      size: 1863408
   finalling_data:
     cmd: python src/f_s.py --config=config.yaml
     deps:
     - path: data/processed/aps.csv
-      md5: daa9ae1fe9f50c56b22d4b2e4447d64c
-      size: 24967387
+      md5: 491b506f367e9c77a2438c214cf02c69
+      size: 1863408
     - path: src/f_s.py
-      md5: e46c96551b53ab3d079b3f148a97c5b8
-      size: 2220
+      md5: 7a09f97909d6e89ee340bb2b27a92c31
+      size: 1848
     outs:
     - path: data/final/aps.csv
-      md5: c9b498604f12753083fa6dccc193df25
-      size: 24430310
+      md5: 5423bbba0160b2500975224e7198fd29
+      size: 1833857
   training_and_evaluating:
     cmd: python src/train_and_evalute.py --config=params.yaml
     deps:
     - path: data/final/aps.csv
-      md5: c9b498604f12753083fa6dccc193df25
-      size: 24430310
+      md5: 5423bbba0160b2500975224e7198fd29
+      size: 1833857
     - path: src/train_and_evalute.py
-      md5: d9aa6cc776ccdb314bf23aad80107101
-      size: 6494
+      md5: b1f40ba0a7d9132cdb38aad0daa05785
+      size: 6596
     outs:
     - path: saved_models/model.joblib
-      md5: 597e8f9e6c86f06f7378a69145636107
-      size: 1186253
+      md5: cc03c7df6e10fa160667d02f609ee9e5
+      size: 1820779

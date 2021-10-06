@@ -73,7 +73,7 @@ class train:
             log(self.file,"successfully applied smote")
             log(self.file,"training started")
             xg.fit(X_train_smote,y_train_smote)
-            predicted_qualities = np.where(xg.predict_proba(X_test)[:,1]>0.6,1,0)    
+            predicted_qualities = np.where(xg.predict_proba(X_test)[:,1]>0.9,1,0)    
 
             with open(scores_file, "w") as f:
                 scores = {
@@ -111,8 +111,10 @@ class train:
                 json.dump(params, f, indent=4)
             os.makedirs(model_dir, exist_ok=True)
             model_path = os.path.join(model_dir, "model.joblib")
+            model_path1=os.path.join(model_dir,"sc.joblib")
             log(self.file,"model dumped successfully")
             joblib.dump(xg, model_path)
+            joblib.dump(sc,model_path1)
         except Exception as e:
             print(e)
 
