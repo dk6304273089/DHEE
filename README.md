@@ -42,5 +42,9 @@ https://docker-dem.herokuapp.com/
 ```
 ```bash
 sample values for test [76698,0,428776,755876,62282,0] 
-,[153204,0,119892,960182,51558,5602235]
+,[153204,0,119892,960182,
+51558,5602235]
 ```
+
+
+![Screenshot (143)](https://user-images.githubusercontent.com/65006527/155890981-0927f987-2d56-4fe7-a8dd-9f7d2d0c1380.png)
