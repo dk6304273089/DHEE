@@ -20,7 +20,6 @@ try:
 #ay_008=int(st.sidebar.number_input("Enter the value of ay_008",min_value=0,max_value=104566992))
 #dn_000=int(st.sidebar.number_input("Enter the value of dn_000",min_value=0,max_value=2924584))
 #cj_000=int(st.sidebar.number_input("Enter the value of cj_000",min_value=0,max_value=60949671))
-
     if ok:
         values=[[input1,input2,input3,input4,input5,input6]]
         model=joblib.load("saved_models/model.joblib")
