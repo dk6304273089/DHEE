@@ -40,3 +40,6 @@ To access our prediction page on browser
 ```bash
 https://docker-dem.herokuapp.com/
 ```
+```bash
+sample values for test [76698,0,428776,755876,62282,0,0]
+```
