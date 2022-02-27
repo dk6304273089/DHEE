@@ -27,9 +27,9 @@ try:
         transform=model1.transform(values)
         c=np.where(model.predict_proba(transform)[:,1]>0.9,1,0)
         if c==[0]:
-            st.success("The Failure is not related to air pressure system")
+            st.success("The Failure is not related to Air Pressure System")
         else:
-            st.subheader("The Failure is related to air pressure system")
+            st.success("The Failure is related to Air Pressure System")
 except ValueError:
     st.error("Please enter a valid input")
    
