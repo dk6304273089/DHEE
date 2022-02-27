@@ -26,10 +26,10 @@ try:
         model1=joblib.load("saved_models/sc.joblib")
         transform=model1.transform(values)
         c=np.where(model.predict_proba(transform)[:,1]>0.9,1,0)
-    if c==[0]:
-        st.success("The Failure is not related to air pressure system")
-    else:
-        st.subheader("The Failure is related to air pressure system")
+        if c==[0]:
+            st.success("The Failure is not related to air pressure system")
+        else:
+            st.subheader("The Failure is related to air pressure system")
 except ValueError:
     st.error("Please enter a valid input")
    
